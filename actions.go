@@ -1,6 +1,10 @@
 // Package actions provides definitions of actions and their data
 package actions
 
+import (
+	"encoding/json"
+)
+
 // Action represents an operation on a Dnote resource
 type Action struct {
 	UUID      string          `json:"uuid"`
@@ -28,6 +32,14 @@ type AddNoteDataV1 struct {
 	NoteUUID string `json:"note_uuid"`
 	BookName string `json:"book_name"`
 	Content  string `json:"content"`
+}
+
+// AddNoteDataV2 is a data for adding a note (v2)
+type AddNoteDataV2 struct {
+	NoteUUID string `json:"note_uuid"`
+	BookName string `json:"book_name"`
+	Content  string `json:"content"`
+	Public   bool   `json:"public"`
 }
 
 // EditNoteDataV1 is a data for editing a note (v1)
