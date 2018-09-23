@@ -73,11 +73,10 @@ type EditNoteDataV2 struct {
 
 // EditNoteDataV3 is a data for editing a note (v3)
 type EditNoteDataV3 struct {
-	NoteUUID     string  `json:"note_uuid"`
-	BookUUID     string  `json:"book_uuid"`
-	DestBookUUID *string `json:"dest_book_uuid"`
-	Content      *string `json:"content"`
-	Public       *bool   `json:"public"`
+	NoteUUID string  `json:"note_uuid"`
+	BookUUID *string `json:"book_uuid"`
+	Content  *string `json:"content"`
+	Public   *bool   `json:"public"`
 }
 
 /********* remove_note **/
@@ -91,7 +90,6 @@ type RemoveNoteDataV1 struct {
 // RemoveNoteDataV2 is a data for removing a note (v2)
 type RemoveNoteDataV2 struct {
 	NoteUUID string `json:"note_uuid"`
-	BookUUID string `json:"book_uuid"`
 }
 
 /********* add_book **/
