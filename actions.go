@@ -27,6 +27,8 @@ var (
 	ActionRemoveBook = "remove_book"
 )
 
+/********* add_note **/
+
 // AddNoteDataV1 is a data for adding a note (v1)
 type AddNoteDataV1 struct {
 	NoteUUID string `json:"note_uuid"`
@@ -41,6 +43,16 @@ type AddNoteDataV2 struct {
 	Content  string `json:"content"`
 	Public   bool   `json:"public"`
 }
+
+// AddNoteDataV3 is a data for adding a note (v3)
+type AddNoteDataV3 struct {
+	NoteUUID string `json:"note_uuid"`
+	BookUUID string `json:"book_uuid"`
+	Content  string `json:"content"`
+	Public   bool   `json:"public"`
+}
+
+/********* edit_note **/
 
 // EditNoteDataV1 is a data for editing a note (v1)
 type EditNoteDataV1 struct {
@@ -59,18 +71,50 @@ type EditNoteDataV2 struct {
 	Public   *bool   `json:"public"`
 }
 
+// EditNoteDataV3 is a data for editing a note (v3)
+type EditNoteDataV3 struct {
+	NoteUUID     string  `json:"note_uuid"`
+	BookUUID     string  `json:"book_uuid"`
+	DestBookUUID *string `json:"dest_book_uuid"`
+	Content      *string `json:"content"`
+	Public       *bool   `json:"public"`
+}
+
+/********* remove_note **/
+
 // RemoveNoteDataV1 is a data for removing a note (v1)
 type RemoveNoteDataV1 struct {
 	NoteUUID string `json:"note_uuid"`
 	BookName string `json:"book_name"`
 }
 
+// RemoveNoteDataV2 is a data for removing a note (v2)
+type RemoveNoteDataV2 struct {
+	NoteUUID string `json:"note_uuid"`
+	BookUUID string `json:"book_uuid"`
+}
+
+/********* add_book **/
+
 // AddBookDataV1 is a data for adding a book (v1)
 type AddBookDataV1 struct {
 	BookName string `json:"book_name"`
 }
 
+// AddBookDataV2 is a data for adding a book (v2)
+type AddBookDataV2 struct {
+	BookName string `json:"book_name"`
+	BookUUID string `json:"book_uuid"`
+}
+
+/********* remove_book **/
+
 // RemoveBookDataV1 is a data for removing a book (v1)
 type RemoveBookDataV1 struct {
 	BookName string `json:"book_name"`
+}
+
+// RemoveBookDataV2 is a data for removing a book (v2)
+type RemoveBookDataV2 struct {
+	BookUUID string `json:"book_uuid"`
 }
