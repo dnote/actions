@@ -114,5 +114,7 @@ type RemoveBookDataV1 struct {
 
 // RemoveBookDataV2 is a data for removing a book (v2)
 type RemoveBookDataV2 struct {
+	// BookName is used for a remote migration #1 that syncs book_uuid with server
+	BookName string `json:"book_name"`
 	BookUUID string `json:"book_uuid"`
 }
