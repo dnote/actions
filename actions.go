@@ -59,12 +59,20 @@ type EditNoteDataV2 struct {
 	Public   *bool   `json:"public"`
 }
 
+// NoteSnapshot is a snapshot of a note
+type NoteSnapshot struct {
+	Content  string `json:"content"`
+	BookName string `json:"book_name"`
+	Public   string `json:"public"`
+}
+
 // EditNoteDataV3 is a data for editing a note (v2)
 type EditNoteDataV3 struct {
-	NoteUUID string  `json:"note_uuid"`
-	BookName *string `json:"book_name"`
-	Content  *string `json:"content"`
-	Public   *bool   `json:"public"`
+	NoteUUID string       `json:"note_uuid"`
+	Snapshot NoteSnapshot `json:"snapshot"`
+	BookName *string      `json:"book_name"`
+	Content  *string      `json:"content"`
+	Public   *bool        `json:"public"`
 }
 
 // RemoveNoteDataV1 is a data for removing a note (v1)
