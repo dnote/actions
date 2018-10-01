@@ -63,7 +63,7 @@ type EditNoteDataV2 struct {
 type NoteSnapshot struct {
 	Content  string `json:"content"`
 	BookName string `json:"book_name"`
-	Public   string `json:"public"`
+	Public   bool   `json:"public"`
 }
 
 // EditNoteDataV3 is a data for editing a note (v2)
