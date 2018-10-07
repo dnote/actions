@@ -32,6 +32,8 @@ type NoteSnapshot struct {
 	Content  string `json:"content"`
 	BookName string `json:"book_name"`
 	Public   bool   `json:"public"`
+	AddedOn  int64  `json:"added_on"`
+	EditedOn int64  `json:"edited_on"`
 }
 
 // AddNoteDataV1 is a data for adding a note (v1)
