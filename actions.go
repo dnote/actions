@@ -27,15 +27,6 @@ var (
 	ActionRemoveBook = "remove_book"
 )
 
-// NoteSnapshot is a snapshot of a note
-type NoteSnapshot struct {
-	Content  string `json:"content"`
-	BookName string `json:"book_name"`
-	Public   bool   `json:"public"`
-	AddedOn  int64  `json:"added_on"`
-	EditedOn int64  `json:"edited_on"`
-}
-
 // AddNoteDataV1 is a data for adding a note (v1)
 type AddNoteDataV1 struct {
 	NoteUUID string `json:"note_uuid"`
@@ -70,11 +61,10 @@ type EditNoteDataV2 struct {
 
 // EditNoteDataV3 is a data for editing a note (v2)
 type EditNoteDataV3 struct {
-	NoteUUID string       `json:"note_uuid"`
-	Snapshot NoteSnapshot `json:"snapshot"`
-	BookName *string      `json:"book_name"`
-	Content  *string      `json:"content"`
-	Public   *bool        `json:"public"`
+	NoteUUID string  `json:"note_uuid"`
+	BookName *string `json:"book_name"`
+	Content  *string `json:"content"`
+	Public   *bool   `json:"public"`
 }
 
 // RemoveNoteDataV1 is a data for removing a note (v1)
@@ -85,8 +75,7 @@ type RemoveNoteDataV1 struct {
 
 // RemoveNoteDataV2 is a data for removing a note (v2)
 type RemoveNoteDataV2 struct {
-	NoteUUID string       `json:"note_uuid"`
-	Snapshot NoteSnapshot `json:"snapshot"`
+	NoteUUID string `json:"note_uuid"`
 }
 
 // AddBookDataV1 is a data for adding a book (v1)
