@@ -11,7 +11,7 @@ type Action struct {
 	Schema    int             `json:"schema"`
 	Type      string          `json:"type"`
 	Data      json.RawMessage `json:"data"`
-	Timestamp int          `json:"timestamp"`
+	Timestamp int64           `json:"timestamp"`
 }
 
 var (
